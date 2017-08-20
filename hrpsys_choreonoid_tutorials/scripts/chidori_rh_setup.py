@@ -24,13 +24,15 @@ class CHIDORI_HrpsysConfigurator(ChoreonoidHrpsysConfigurator):
             ['co', "CollisionDetector"],
             ['hes', "EmergencyStopper"],
             ['el', "SoftErrorLimiter"],
+            ['cmg', "CMGcontroller"],
             ['log', "DataLogger"]
             ]
 
     def defJointGroups (self):
         rleg_group = ['rleg', ['RLEG_JOINT0', 'RLEG_JOINT1', 'RLEG_JOINT2', 'RLEG_JOINT3', 'RLEG_JOINT4', 'RLEG_JOINT5']]
         lleg_group = ['lleg', ['LLEG_JOINT0', 'LLEG_JOINT1', 'LLEG_JOINT2', 'LLEG_JOINT3', 'LLEG_JOINT4', 'LLEG_JOINT5']]
-        self.Groups = [rleg_group, lleg_group]
+        torso_group = ['torso', ['CMG_JOINT0', 'CMG_JOINT1', 'CMG_JOINT2']]
+        self.Groups = [rleg_group, lleg_group, torso_group]
 
     def startABSTIMP (self):
         self.startAutoBalancer()

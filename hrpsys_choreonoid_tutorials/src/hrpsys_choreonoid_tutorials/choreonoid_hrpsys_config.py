@@ -23,6 +23,7 @@ class ChoreonoidHrpsysConfiguratorOrg(URATAHrpsysConfigurator):
             # ['tl', "ThermoLimiter"],
             ['hes', "EmergencyStopper"],
             ['el', "SoftErrorLimiter"],
+            ['cmg', "CMGcontroller"],
             ['log', "DataLogger"]
             ]
     def setupLogger(self, maxlen=15000):
